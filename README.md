@@ -1,3 +1,25 @@
+## MT4 to Oanda FXtrade Bridge
+
+This Python script to act as a bridge from MT4 to Oanda FXtrade. I use this to
+allow my MT4 expert advisors to send trades to Oanda's FXtrade API. Using this
+I can place trades as small as 1 unit.
+
+The MQL script writes files to the files/FXtrade folder and this Python script
+reads them and manipulates orders via the Oanda API. Reading and writing files
+to communicate orders was the most consistent method that I found to get data
+from MT4 to Python. It is also unlikely that a future MT4 update will disable
+file usage.
+
+To use the script you will need to add your account number and api token to the
+static.py file. The below functions can be called from within your expert
+advisors to open and close trades and positions.
+
+This script uses [oandapy](https://github.com/oanda/oandapy) to connect to
+Oanda's API, so you will need this package.
+
+This is the first program that I have ever written in Python, so if the coding
+is bloated or amateurish be kind.
+
 ```c++
 //================================================//
 // FXtrade Bridge Functions                       //
